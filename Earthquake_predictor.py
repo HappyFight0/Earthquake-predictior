@@ -8,7 +8,7 @@ import numpy as np # linear algebra
 import pandas as pd # data processing
 import seaborn as sn
 import os
-print(os.listdir("E:/1.VIT-20BCE2748/2nd_Year_2021-22/4th_sem_3rd_Jan_2022/BCI3002/Project/Earthquake predictor"))
+print(os.listdir("../Earthquake predictor"))
 
 
 # In[2]:
@@ -21,7 +21,7 @@ from subprocess import check_output
 # In[3]:
 
 
-veri=pd.read_csv(('E:/1.VIT-20BCE2748/2nd_Year_2021-22/4th_sem_3rd_Jan_2022/BCI3002/Project/Earthquake predictor/earthquake.csv'), encoding='utf-8', engine='python',sep=',', error_bad_lines=False)
+veri=pd.read_csv(('../Earthquake predictor/earthquake.csv'), encoding='utf-8', engine='python',sep=',', error_bad_lines=False)
 veri.describe()
 
 
@@ -109,7 +109,7 @@ print('intercepts: \n',linear.intercept_)
 # In[16]:
 
 
-predict_data=np.array([[28.05,84.80,50.0]])   #kocaeli earthquake prediction is 4.05, quiet close to the real value
+predict_data=np.array([[28.05,84.80,50.0]])   #kocaeli earthquake prediction is 4.51, quiet close to the real value
 data2=linear.predict(predict_data)
 print(data2)   
 
@@ -121,15 +121,4 @@ import pickle
 pickle.dump(linear, open('model.pkl', 'wb'))
 model = pickle.load(open('model.pkl', 'rb'))
 
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
+# %%
